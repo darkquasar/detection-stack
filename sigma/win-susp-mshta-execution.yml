@@ -43,6 +43,7 @@ detection:
             - '*.chm*'
             - '*.xls*'
             - '*.doc*'
+            - '*.zip*'
 ---
 # Sysmon
 logsource:
@@ -67,3 +68,4 @@ detection:
             - '*.chm*'
             - '*.xls*'
             - '*.doc*'
+            - '*.zip*'
