@@ -1,7 +1,7 @@
 action: global
 title: MSHTA Suspicious Execution 01
 status: testing
-description: Detection for mshta.exe suspicious execution patterns
+description: Detection for mshta.exe suspicious execution patterns sometimes involving file polyglotism
 date: 22/02/2019
 modified: 22/02/2019
 author: Diego Perez (@darkquassar)
@@ -30,7 +30,7 @@ detection:
         ProcessCommandLine: 
             - '*mshta vbscript:CreateObject("Wscript.Shell")*'
             - '*mshta vbscript:Execute("Execute*'
-            - '*mshta vbscript:CreateObject(\\""Wscript.Shell\\"").Run(\\""mshta.exe*'
+            - '*mshta vbscript:CreateObject("Wscript.Shell").Run("mshta.exe*'
     selection-2:
         EventID: 4688
         NewProcessName:
@@ -38,7 +38,6 @@ detection:
         ProcessCommandLine: 
             - '*.jpg*'
             - '*.png*'
-            - '*.txt*'
             - '*.lnk*'
             - '*.chm*'
             - '*.xls*'
@@ -55,7 +54,7 @@ detection:
         CommandLine: 
             - '*mshta vbscript:CreateObject("Wscript.Shell")*'
             - '*mshta vbscript:Execute("Execute*'
-            - '*mshta vbscript:CreateObject(\\""Wscript.Shell\\"").Run(\\""mshta.exe*'
+            - '*mshta vbscript:CreateObject("Wscript.Shell").Run("mshta.exe*'
     selection-2:
         EventID: 1
         Image:
@@ -63,7 +62,6 @@ detection:
         ProcessCommandLine: 
             - '*.jpg*'
             - '*.png*'
-            - '*.txt*'
             - '*.lnk*'
             - '*.chm*'
             - '*.xls*'
