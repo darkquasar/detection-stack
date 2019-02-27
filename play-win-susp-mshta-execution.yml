@@ -1,0 +1,31 @@
+title: MSHTA Suspicious Execution 01
+description: Detection for mshta.exe suspicious execution patterns
+date: 22/02/2019
+modified: 22/02/2019
+author: Diego Perez (@darkquassar)
+category:
+    - Malware Infections
+intel:
+    - misp:
+        - None
+    - url:
+        - sigma [this keyword means that references should be searched inside the SIGMA rule]
+severity:
+    - high
+tags:
+    - attack.defense_evasion
+    - attack.t1140
+rules:
+    - sigma:
+        - https://-
+    - yara:
+        - None
+    - suricata:
+        - None
+    - alienvault:
+        - None
+hunting:
+    - scripts:
+        - None
+response:
+    - template: template-01.yml
