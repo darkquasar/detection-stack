@@ -17,7 +17,7 @@ tags:
     - attack.t1140
 rules:
     - sigma:
-        - https://-
+        - https://github.com/darkquasar/detection-stack/blob/master/sigma/win-susp-mshta-execution.yml
     - yara:
         - None
     - suricata:
